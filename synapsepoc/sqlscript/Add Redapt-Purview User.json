@@ -1,0 +1,17 @@
+{
+	"name": "Add Redapt-Purview User",
+	"properties": {
+		"content": {
+			"query": "CREATE USER [Redapt-Purview] FROM EXTERNAL PROVIDER\nGO\n\nEXEC sp_addrolemember 'db_datareader', [Redapt-Purview]\nGO",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "altp5dxeuenjc4awpocws1p1",
+				"poolName": "altp5dxeuenjc4awpocws1p1"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}
