@@ -90,8 +90,7 @@
 											"physicalType": "String"
 										},
 										"sink": {
-											"name": "Timestamp",
-											"type": "String",
+											"name": "WxReadingDateTime",
 											"physicalType": "UTF8"
 										}
 									},
@@ -102,8 +101,7 @@
 											"physicalType": "String"
 										},
 										"sink": {
-											"name": "Outdoor Temperature",
-											"type": "String",
+											"name": "WxReadingOutdoorTemperature",
 											"physicalType": "UTF8"
 										}
 									},
@@ -114,8 +112,7 @@
 											"physicalType": "String"
 										},
 										"sink": {
-											"name": "Outdoor Humidity",
-											"type": "String",
+											"name": "WxReadingOutdoorHumidity",
 											"physicalType": "UTF8"
 										}
 									},
@@ -126,8 +123,7 @@
 											"physicalType": "String"
 										},
 										"sink": {
-											"name": "Dew Point",
-											"type": "String",
+											"name": "WxReadingDewPoint",
 											"physicalType": "UTF8"
 										}
 									},
@@ -138,8 +134,7 @@
 											"physicalType": "String"
 										},
 										"sink": {
-											"name": "Heat Index",
-											"type": "String",
+											"name": "WxReadingHeatIndex",
 											"physicalType": "UTF8"
 										}
 									},
@@ -150,8 +145,7 @@
 											"physicalType": "String"
 										},
 										"sink": {
-											"name": "Wind Chill",
-											"type": "String",
+											"name": "WxReadingWindChill",
 											"physicalType": "UTF8"
 										}
 									},
@@ -162,8 +156,7 @@
 											"physicalType": "String"
 										},
 										"sink": {
-											"name": "Barometric Pressure",
-											"type": "String",
+											"name": "WxReadingBarometricPressure",
 											"physicalType": "UTF8"
 										}
 									},
@@ -174,8 +167,7 @@
 											"physicalType": "String"
 										},
 										"sink": {
-											"name": "Rain",
-											"type": "String",
+											"name": "WxReadingRain",
 											"physicalType": "UTF8"
 										}
 									},
@@ -186,8 +178,7 @@
 											"physicalType": "String"
 										},
 										"sink": {
-											"name": "Wind Speed",
-											"type": "String",
+											"name": "WxReadingWindSpeed",
 											"physicalType": "UTF8"
 										}
 									},
@@ -198,8 +189,7 @@
 											"physicalType": "String"
 										},
 										"sink": {
-											"name": "Wind Average",
-											"type": "String",
+											"name": "WxReadingWindAverage",
 											"physicalType": "UTF8"
 										}
 									},
@@ -210,8 +200,7 @@
 											"physicalType": "String"
 										},
 										"sink": {
-											"name": "Peak Wind",
-											"type": "String",
+											"name": "WxReadingPeakWind",
 											"physicalType": "UTF8"
 										}
 									},
@@ -222,8 +211,7 @@
 											"physicalType": "String"
 										},
 										"sink": {
-											"name": "Wind Direction",
-											"type": "String",
+											"name": "WxReadingWindDirection",
 											"physicalType": "UTF8"
 										}
 									},
@@ -234,8 +222,7 @@
 											"physicalType": "String"
 										},
 										"sink": {
-											"name": "Indoor Temperature",
-											"type": "String",
+											"name": "WxReadingIndoorTemperature",
 											"physicalType": "UTF8"
 										}
 									},
@@ -246,8 +233,7 @@
 											"physicalType": "String"
 										},
 										"sink": {
-											"name": "Indoor Humidity",
-											"type": "String",
+											"name": "WxReadingIndoorHumidity",
 											"physicalType": "UTF8"
 										}
 									}
@@ -942,7 +928,64 @@
 					},
 					"compressionCodec": "snappy"
 				},
-				"schema": []
+				"schema": [
+					{
+						"name": "WxReadingDateTime",
+						"type": "UTF8"
+					},
+					{
+						"name": "WxReadingOutdoorTemperature",
+						"type": "UTF8"
+					},
+					{
+						"name": "WxReadingOutdoorHumidity",
+						"type": "UTF8"
+					},
+					{
+						"name": "WxReadingDewpoint",
+						"type": "UTF8"
+					},
+					{
+						"name": "WxReadingHeatIndex",
+						"type": "UTF8"
+					},
+					{
+						"name": "WxReadingWindChill",
+						"type": "UTF8"
+					},
+					{
+						"name": "WxReadingBarometricPressure",
+						"type": "UTF8"
+					},
+					{
+						"name": "WxReadingRain",
+						"type": "UTF8"
+					},
+					{
+						"name": "WxReadingWindSpeed",
+						"type": "UTF8"
+					},
+					{
+						"name": "WxReadingWindAverage",
+						"type": "UTF8"
+					},
+					{
+						"name": "WxReadingPeakWind",
+						"type": "UTF8"
+					},
+					{
+						"name": "WxReadingWindDirection",
+						"type": "UTF8"
+					},
+					{
+						"name": "WxReadingIndoorTemperature",
+						"type": "UTF8"
+					},
+					{
+						"name": "WxReadingIndoorHumidity",
+						"type": "UTF8"
+					}
+				]
 			},
 			"dependsOn": [
 				"[concat(variables('workspaceId'), '/linkedServices/masblob')]"
@@ -1611,6 +1654,37 @@
 			]
 		},
 		{
+			"name": "[concat(parameters('workspaceName'), '/Every 2 minutes')]",
+			"type": "Microsoft.Synapse/workspaces/triggers",
+			"apiVersion": "2019-06-01-preview",
+			"properties": {
+				"annotations": [],
+				"runtimeState": "Started",
+				"pipelines": [
+					{
+						"pipelineReference": {
+							"referenceName": "AW Pipeline",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					}
+				],
+				"type": "ScheduleTrigger",
+				"typeProperties": {
+					"recurrence": {
+						"frequency": "Minute",
+						"interval": 2,
+						"startTime": "2022-02-18T13:00:00Z",
+						"endTime": "2022-02-18T17:00:00Z",
+						"timeZone": "UTC"
+					}
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('workspaceId'), '/pipelines/AW Pipeline')]"
+			]
+		},
+		{
 			"name": "[concat(parameters('workspaceName'), '/AutoResolveIntegrationRuntime')]",
 			"type": "Microsoft.Synapse/workspaces/integrationRuntimes",
 			"apiVersion": "2019-06-01-preview",
@@ -2079,37 +2153,6 @@
 			"apiVersion": "2019-06-01-preview",
 			"properties": {},
 			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('workspaceName'), '/Every 2 minutes')]",
-			"type": "Microsoft.Synapse/workspaces/triggers",
-			"apiVersion": "2019-06-01-preview",
-			"properties": {
-				"annotations": [],
-				"runtimeState": "Started",
-				"pipelines": [
-					{
-						"pipelineReference": {
-							"referenceName": "AW Pipeline",
-							"type": "PipelineReference"
-						},
-						"parameters": {}
-					}
-				],
-				"type": "ScheduleTrigger",
-				"typeProperties": {
-					"recurrence": {
-						"frequency": "Minute",
-						"interval": 2,
-						"startTime": "2022-02-18T13:00:00Z",
-						"endTime": "2022-02-18T17:00:00Z",
-						"timeZone": "UTC"
-					}
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('workspaceId'), '/pipelines/AW Pipeline')]"
-			]
 		}
 	]
 }
