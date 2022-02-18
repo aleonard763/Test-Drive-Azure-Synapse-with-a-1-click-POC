@@ -1,0 +1,234 @@
+{
+	"name": "AW Pipeline",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy AW Data",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobStorageReadSettings",
+							"recursive": true,
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
+					},
+					"sink": {
+						"type": "ParquetSink",
+						"storeSettings": {
+							"type": "AzureBlobStorageWriteSettings"
+						},
+						"formatSettings": {
+							"type": "ParquetWriteSettings"
+						}
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "Timestamp",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Timestamp",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "Outdoor Temperature",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Outdoor Temperature",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "Outdoor Humidity",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Outdoor Humidity",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "Dew Point",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Dew Point",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "Heat Index",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Heat Index",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "Wind Chill",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Wind Chill",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "Barometric Pressure",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Barometric Pressure",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "Rain",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Rain",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "Wind Speed",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Wind Speed",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "Wind Average",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Wind Average",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "Peak Wind",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Peak Wind",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "Wind Direction",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Wind Direction",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "Indoor Temperature",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Indoor Temperature",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "Indoor Humidity",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Indoor Humidity",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							}
+						],
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "blob_AW_CSV",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "awparquet",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"annotations": []
+	}
+}

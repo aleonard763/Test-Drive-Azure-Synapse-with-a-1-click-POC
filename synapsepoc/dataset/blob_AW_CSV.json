@@ -1,0 +1,80 @@
+{
+	"name": "blob_AW_CSV",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_AW_CSV",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "acuriteweather.CSV",
+				"container": "contaw"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "Timestamp",
+				"type": "String"
+			},
+			{
+				"name": "Outdoor Temperature",
+				"type": "String"
+			},
+			{
+				"name": "Outdoor Humidity",
+				"type": "String"
+			},
+			{
+				"name": "Dew Point",
+				"type": "String"
+			},
+			{
+				"name": "Heat Index",
+				"type": "String"
+			},
+			{
+				"name": "Wind Chill",
+				"type": "String"
+			},
+			{
+				"name": "Barometric Pressure",
+				"type": "String"
+			},
+			{
+				"name": "Rain",
+				"type": "String"
+			},
+			{
+				"name": "Wind Speed",
+				"type": "String"
+			},
+			{
+				"name": "Wind Average",
+				"type": "String"
+			},
+			{
+				"name": "Peak Wind",
+				"type": "String"
+			},
+			{
+				"name": "Wind Direction",
+				"type": "String"
+			},
+			{
+				"name": "Indoor Temperature",
+				"type": "String"
+			},
+			{
+				"name": "Indoor Humidity",
+				"type": "String"
+			}
+		]
+	}
+}

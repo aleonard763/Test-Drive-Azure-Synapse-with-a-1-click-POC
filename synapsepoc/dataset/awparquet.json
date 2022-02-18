@@ -1,0 +1,20 @@
+{
+	"name": "awparquet",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "masblob",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "aw2.parquet",
+				"container": "contawmas"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	}
+}
