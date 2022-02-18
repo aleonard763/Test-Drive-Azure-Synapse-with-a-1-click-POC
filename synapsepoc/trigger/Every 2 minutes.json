@@ -1,0 +1,25 @@
+{
+	"name": "Every 2 minutes",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "AW Pipeline",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Minute",
+				"interval": 15,
+				"startTime": "2022-02-18T13:00:00Z",
+				"endTime": "2022-02-18T17:00:00Z",
+				"timeZone": "UTC"
+			}
+		}
+	}
+}
