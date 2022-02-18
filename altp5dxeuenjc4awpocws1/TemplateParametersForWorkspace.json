@@ -8,6 +8,12 @@
 		"TripFaresSynapseAnalyticsLinkedService_connectionString": {
 			"value": ""
 		},
+		"ls_AW_CSV_connectionString": {
+			"value": ""
+		},
+		"masblob_connectionString": {
+			"value": ""
+		},
 		"HttpServerTripDataLinkedService_properties_typeProperties_url": {
 			"value": "https://raw.githubusercontent.com/Azure/Test-Drive-Azure-Synapse-with-a-1-click-POC/main/tripDataAndFaresCSV/trip-data.csv"
 		},
