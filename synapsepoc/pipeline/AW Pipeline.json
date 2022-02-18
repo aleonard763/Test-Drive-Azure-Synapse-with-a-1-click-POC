@@ -46,8 +46,7 @@
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "Timestamp",
-									"type": "String",
+									"name": "WxReadingDateTime",
 									"physicalType": "UTF8"
 								}
 							},
@@ -58,8 +57,7 @@
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "Outdoor Temperature",
-									"type": "String",
+									"name": "WxReadingOutdoorTemperature",
 									"physicalType": "UTF8"
 								}
 							},
@@ -70,8 +68,7 @@
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "Outdoor Humidity",
-									"type": "String",
+									"name": "WxReadingOutdoorHumidity",
 									"physicalType": "UTF8"
 								}
 							},
@@ -82,8 +79,7 @@
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "Dew Point",
-									"type": "String",
+									"name": "WxReadingDewPoint",
 									"physicalType": "UTF8"
 								}
 							},
@@ -94,8 +90,7 @@
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "Heat Index",
-									"type": "String",
+									"name": "WxReadingHeatIndex",
 									"physicalType": "UTF8"
 								}
 							},
@@ -106,8 +101,7 @@
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "Wind Chill",
-									"type": "String",
+									"name": "WxReadingWindChill",
 									"physicalType": "UTF8"
 								}
 							},
@@ -118,8 +112,7 @@
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "Barometric Pressure",
-									"type": "String",
+									"name": "WxReadingBarometricPressure",
 									"physicalType": "UTF8"
 								}
 							},
@@ -130,8 +123,7 @@
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "Rain",
-									"type": "String",
+									"name": "WxReadingRain",
 									"physicalType": "UTF8"
 								}
 							},
@@ -142,8 +134,7 @@
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "Wind Speed",
-									"type": "String",
+									"name": "WxReadingWindSpeed",
 									"physicalType": "UTF8"
 								}
 							},
@@ -154,8 +145,7 @@
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "Wind Average",
-									"type": "String",
+									"name": "WxReadingWindAverage",
 									"physicalType": "UTF8"
 								}
 							},
@@ -166,8 +156,7 @@
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "Peak Wind",
-									"type": "String",
+									"name": "WxReadingPeakWind",
 									"physicalType": "UTF8"
 								}
 							},
@@ -178,8 +167,7 @@
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "Wind Direction",
-									"type": "String",
+									"name": "WxReadingWindDirection",
 									"physicalType": "UTF8"
 								}
 							},
@@ -190,8 +178,7 @@
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "Indoor Temperature",
-									"type": "String",
+									"name": "WxReadingIndoorTemperature",
 									"physicalType": "UTF8"
 								}
 							},
@@ -202,8 +189,7 @@
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "Indoor Humidity",
-									"type": "String",
+									"name": "WxReadingIndoorHumidity",
 									"physicalType": "UTF8"
 								}
 							}

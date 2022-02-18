@@ -15,6 +15,63 @@
 			},
 			"compressionCodec": "snappy"
 		},
-		"schema": []
+		"schema": [
+			{
+				"name": "WxReadingDateTime",
+				"type": "UTF8"
+			},
+			{
+				"name": "WxReadingOutdoorTemperature",
+				"type": "UTF8"
+			},
+			{
+				"name": "WxReadingOutdoorHumidity",
+				"type": "UTF8"
+			},
+			{
+				"name": "WxReadingDewpoint",
+				"type": "UTF8"
+			},
+			{
+				"name": "WxReadingHeatIndex",
+				"type": "UTF8"
+			},
+			{
+				"name": "WxReadingWindChill",
+				"type": "UTF8"
+			},
+			{
+				"name": "WxReadingBarometricPressure",
+				"type": "UTF8"
+			},
+			{
+				"name": "WxReadingRain",
+				"type": "UTF8"
+			},
+			{
+				"name": "WxReadingWindSpeed",
+				"type": "UTF8"
+			},
+			{
+				"name": "WxReadingWindAverage",
+				"type": "UTF8"
+			},
+			{
+				"name": "WxReadingPeakWind",
+				"type": "UTF8"
+			},
+			{
+				"name": "WxReadingWindDirection",
+				"type": "UTF8"
+			},
+			{
+				"name": "WxReadingIndoorTemperature",
+				"type": "UTF8"
+			},
+			{
+				"name": "WxReadingIndoorHumidity",
+				"type": "UTF8"
+			}
+		]
 	}
 }
